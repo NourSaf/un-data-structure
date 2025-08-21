@@ -15,11 +15,14 @@ The UN Data Structure project aims to:
 
 ```
 un-data-structure/
-├── code/                           # Jupyter notebooks for data scraping and cleaning
+├── scrapers/                       # Web scraping notebooks
+│   ├── scraper_universal-human-rights-index.ipynb  # Web scraper for human rights recommendations
+│   ├── treatiy_collection-checkpoint.ipynb         # Web scraper for UN treaty participation data
+│   └── unConcerns_cleainging-checkpoint.ipynb      # Additional scrapers for UN concerns
+├── data_cleaning/                  # Data cleaning notebooks
 │   ├── cleaning_CAC-dataset.ipynb  # Data cleaning for Committee Against Torture dataset
 │   ├── cleaning_CAT-dataset.ipynb  # Data cleaning for Convention Against Torture dataset
-│   ├── scraper_universal-human-rights-index.ipynb  # Web scraper for human rights recommendations
-│   └── treatiy_collection.ipynb    # Web scraper for UN treaty participation data
+│   └── treatiy_collection.ipynb    # Treaty collection data processing
 ├── data-sets/                      # Processed and cleaned datasets
 │   ├── Key_Differences_CAT.csv     # Analyzed differences in CAT data
 │   ├── ohchr_cac_2022_2024.csv     # Committee against Torture data
@@ -39,7 +42,7 @@ The project uses two main approaches for data collection:
 
 #### A. Universal Human Rights Index Scraper
 
-The [`scraper_universal-human-rights-index.ipynb`](./code/scraper_universal-human-rights-index.ipynb) notebook:
+The [`scraper_universal-human-rights-index.ipynb`](./scrapers/scraper_universal-human-rights-index.ipynb) notebook:
 
 - Uses Playwright (async browser automation) to interact with dynamic web content
 - Extracts data from the Committee against Torture (CAT) and the Special Rapporteur in the field of cultural rights
@@ -63,7 +66,7 @@ The [`scraper_universal-human-rights-index.ipynb`](./code/scraper_universal-huma
 
 #### B. UN Treaty Collection Scraper
 
-The [`treatiy_collection.ipynb`](./code/treatiy_collection.ipynb) notebook:
+The [`treatiy_collection.ipynb`](./data_cleaning/treatiy_collection.ipynb) notebook:
 
 - Uses BeautifulSoup for HTML parsing
 - Extracts country participation data for UN treaties
@@ -80,7 +83,7 @@ The [`treatiy_collection.ipynb`](./code/treatiy_collection.ipynb) notebook:
 
 ### 2. Data Cleaning
 
-The [`cleaning_CAC-dataset.ipynb`](./code/cleaning_CAC-dataset.ipynb) and [`cleaning_CAT-dataset.ipynb`](./code/cleaning_CAT-dataset.ipynb) notebooks:
+The [`cleaning_CAC-dataset.ipynb`](./data_cleaning/cleaning_CAC-dataset.ipynb) and [`cleaning_CAT-dataset.ipynb`](./data_cleaning/cleaning_CAT-dataset.ipynb) notebooks:
 
 - Standardize country names and format
 - Handle missing values
